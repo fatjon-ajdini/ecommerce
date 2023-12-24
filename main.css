@@ -66,19 +66,20 @@ nav {
     border-radius: 20px;
 }
 
+
+/*  CARDS */
 .cards {
     margin-top: 80px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 30px;
 }
 
 .flip-card {
     justify-self: center;
     background-color: transparent;
     width: 400px;
-    height: 200px;
-    border: 1px solid #f1f1f1;
+    height: 250px;
 }
 
 .flip-card-inner {
@@ -92,7 +93,7 @@ nav {
 
 .flip-card-front > img {
     width: 400px;
-    height: 200px;
+    height: 250px;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -113,16 +114,26 @@ nav {
 }
 
 .flip-card-back {
-    background-color: dodgerblue;
+    background-color: #2D9596;
     color: white;
     transform: rotateY(180deg);
 }
 
+.flip-card-back > h1 {
+    line-height: 250px;
+}
+
+h1, p {
+    margin-top: 10px !important;
+    text-align: center;
+    font-weight: bold;
+}
 
 .slider {
     width: 100%;
     height: 510px;
     position: relative;
+    background-color: #ECF4D6;
 }
 
 .slider img {
@@ -184,3 +195,7 @@ nav {
     height: 200px;
 }
 
+/* ABOUT COMPANY */
+.about-company {
+    background-color: #265073;
+}
