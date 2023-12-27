@@ -8,10 +8,12 @@ header {
     width: 100%;
     height: 700px;
     margin: 0;
-    background-color: #9AD0C2;
+    background-color: #265073;
 }
 
 nav {
+    position: relative;
+    z-index: 1;
     margin: auto;
     width: 80%;
     height: 80px;
@@ -73,6 +75,7 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 30px;
+    z-index: -1;
 }
 
 .flip-card {
@@ -124,7 +127,6 @@ nav {
 }
 
 h1, p {
-    margin-top: 10px !important;
     text-align: center;
     font-weight: bold;
 }
