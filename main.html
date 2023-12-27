@@ -12,43 +12,36 @@
 <body>
     <header>
             <nav class="navbar">
-                <div class="container-fluid">
+                <div class="nav-container">
                     <img src="./images/logo.png" alt="Logo">
-                    <form class="search-bar" role="search">
-                        <input class="search-control" type="search" placeholder="Search">
-                        <button type="submit">
-                            <span class="material-symbols-outlined">
-                                search
-                            </span>
-                        </button>
-                    </form>
-                    <div class="dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Category
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Brand
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </div>
-                    <div class="cart">
-                        <span class="material-symbols-outlined">
-                            shopping_cart
-                        </span>
-                    </div>
-                    <div class="log-in">
-                        <button class="btn">Log in</button>
+                    <div class="nav-elements">
+                        <form class="search-bar" role="search">
+                            <input class="search-control" type="search" placeholder="Search">
+                            <button type="submit">
+                                <span class="material-symbols-outlined">
+                                    search
+                                </span>
+                            </button>
+                        </form>
+                        <div class="dropdown">
+                            <button class="button " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Category
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                        <div class="cart">
+                            <button class="button cart" type="button">Cart</button>
+                        </div>
+                        <div class="log-in">
+                            <button class="button log-in">Log in</button>
+                        </div>
+                        <div class="sign-up">
+                            <button class="button sign-up">Sign up</button>
+                        </div>
                     </div>
                 </div>
             </nav>

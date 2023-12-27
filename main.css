@@ -11,32 +11,54 @@ header {
     background-color: #265073;
 }
 
+/* NAVBAR */
 nav {
     position: relative;
     z-index: 1;
     margin: auto;
     width: 80%;
-    height: 80px;
+    height: 70px;
     background-color: #ECF4D6;
-    opacity: 0.7;
-    position: relative;
-    top: 40px;
+    opacity: 0.8;
+    top: 20px;
     border-radius: 50px;
 }
 
-.container-fluid {
-    max-width: 95%;
+.nav-container {
+    margin: 0 auto;
+    height: 50px;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
 }
 
-.container-fluid > img {
-    height: 60px;
+.nav-container > img {
+    height: 40px;
+}
+
+.nav-elements {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 30px;
+}
+
+
+.button {
+    width: 100px;
+    height: 44px;
+    border: 3px white solid;
+    border-radius: 20px;
+    padding: 0 12px;
+    background-color: transparent;
 }
 
 
 /*  SEARCH BAR */
 .search-bar {
     display: flex;
-    width: 350px;
+    width: 400px;
     height: 44px;
 }
 
@@ -61,11 +83,6 @@ nav {
 .search-bar button span {
     font-size: 38px;
     line-height: normal;
-}
-
-.dropdown {
-    border: 3px solid white;
-    border-radius: 20px;
 }
 
 
