@@ -26,6 +26,8 @@ function loadIntialProducts(shop) {
                         <h5>Price: $${product.price}</h5>
                         <h5>Brand: ${product.brand}</h5>
                     </div>
+                    <button class="button-card">Buy</button>
+                    <button class="button-card">Add to cart</button>
                 </div>
             `;
         }
