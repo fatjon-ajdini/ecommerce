@@ -19,15 +19,19 @@ function loadIntialProducts(shop) {
     for(let product of products) {
         if(counter < initialItems) {
             out += `
-                <div class="card">
-                    <img class="card-img" src="${product.thumbnail}" alt="" style="width:100%">
-                    <div class="container">
-                        <h3 class"title>${product.title}</h3>
-                        <h5>Price: $${product.price}</h5>
-                        <h5>Brand: ${product.brand}</h5>
+                <div class="product">
+                    <div class="inner-card">
+                        <img class="card-image" src="${product.thumbnail}">
+                        <div class="container">
+                            <h3 class"title>${product.title}</h3>
+                            <h5>Price: $${product.price}</h5>
+                            <h5>Brand: ${product.brand}</h5>
+                        </div>
                     </div>
-                    <button class="button-card">Buy</button>
-                    <button class="button-card">Add to cart</button>
+                    <div class="card-button">
+                        <button class="button-card button-1">Buy</button>
+                        <button class="button-card button-2">Add to cart</button>
+                    </div>
                 </div>
             `;
         }
@@ -40,7 +44,7 @@ function loadIntialProducts(shop) {
 
     // Loading more products (button - eventListener)
     loadMoreButton.addEventListener("click", function loadData() {
-        let currentDisplayedItems = document.querySelectorAll(".card").length;
+        let currentDisplayedItems = document.querySelectorAll(".product").length;
     
         let out = "";
         let counter = 0;
@@ -48,12 +52,18 @@ function loadIntialProducts(shop) {
         for(let product of products) {
             if(counter >= currentDisplayedItems && counter < loadItems + currentDisplayedItems) {
                 out += `
-                    <div class="card">
-                        <img class="card-img" src="${product.thumbnail}" alt="" style="width:100%">
-                        <div class="container">
-                            <h3 class"title>${product.title}</h3>
-                            <h5>Price: $${product.price}</h5>
-                            <h5>Brand: ${product.brand}</h5>
+                    <div class="product">
+                        <div class="inner-card">
+                            <img class="card-image" src="${product.thumbnail}">
+                            <div class="container">
+                                <h3 class"title>${product.title}</h3>
+                                <h5>Price: $${product.price}</h5>
+                                <h5>Brand: ${product.brand}</h5>
+                            </div>
+                        </div>
+                        <div class="card-button">
+                            <button class="button-card button-1">Buy</button>
+                            <button class="button-card button-2">Add to cart</button>
                         </div>
                     </div>
                 `;
@@ -66,7 +76,7 @@ function loadIntialProducts(shop) {
         div.innerHTML = out;
         div.style.opacity = 0;
     
-        if(document.querySelectorAll(".card").length == products.length) {
+        if(document.querySelectorAll(".product").length == products.length) {
             loadMoreButton.style.display = "none";
         };
         fadeIn(div);
