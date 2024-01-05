@@ -216,11 +216,11 @@ h1, p {
     background-color: #8ADAB2;
 }
 
-.button-2{
+/* .button-2{
     border: 3px #D0F288 solid;
     border-radius: 0px 20px 20px 0px;
     background-color: #D0F288;
-}
+} */
 
 #btn-load-more {
     margin: 10px 43%;
@@ -265,22 +265,22 @@ h1, p {
 }
 
 .company-two > ul  li:nth-child(1) {
-    background: url(images/manufacture1.jpg);
+    background: url(../images/manufacture1.jpg);
     background-size: cover;
     background-position: left;
 }
 .company-two > ul  li:nth-child(2) {
-    background: url(images/manufacture2.jpg);
+    background: url(../images/manufacture2.jpg);
     background-size: cover;
     background-position: left;
 }
 .company-two > ul  li:nth-child(3) {
-    background: url(images/manufacture3.webp);
+    background: url(../images/manufacture3.webp);
     background-size: cover;
     background-position: left;
 }
 .company-two > ul  li:nth-child(4) {
-    background: url(images/manufacture4.jpg);
+    background: url(../images/manufacture4.jpg);
     background-size: cover;
     background-position: left;
 }
