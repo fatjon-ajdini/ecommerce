@@ -5,16 +5,15 @@
 //     .then(response => response.json())
 //     .then(shop => loadIntialProducts(shop));
 
-const cardsContainer = document.getElementById("products-container");
-const loadMoreButton = document.getElementById("btn-load-more");
+// const cardsContainer = document.getElementById("products-container");
+// const loadMoreButton = document.getElementById("btn-load-more");
 
-const initialItems = 15;
-const loadItems = 6;
+// const initialItems = 15;
+// const loadItems = 6;
 
-const addToCartBtn = document.getElementsByClassName(".button-2");
 
 // function loadIntialProducts(shop) {
-//     let out = "";
+//     let out = ``;
 //     let counter = 0;
 //     let products = shop.products;
 
@@ -26,12 +25,12 @@ const addToCartBtn = document.getElementsByClassName(".button-2");
 //                         <img class="card-image" src="${product.thumbnail}">
 //                         <div class="container">
 //                             <h3 class"title>${product.title}</h3>
-//                             <h5>Price: $${product.price}</h5>
-//                             <h5>Brand: ${product.brand}</h5>
+//                             <h5 class="price">Price: $${product.price}</h5>
+//                             <h5 class="brand">Brand: ${product.brand}</h5>
 //                         </div>
 //                     </div>
 //                     <div class="card-button">
-//                         <a href=""><button class="button-card button-1" onclick="addToCart(this)">Details</button></a>
+//                         <button class="button-card">Details</button>
 //                     </div>
 //                 </div>
 //             `;
@@ -49,7 +48,7 @@ const addToCartBtn = document.getElementsByClassName(".button-2");
 //     loadMoreButton.addEventListener("click", function loadData() {
 //         let currentDisplayedItems = document.querySelectorAll(".product").length;
     
-//         let out = "";
+//         let out = ``;
 //         let counter = 0;
     
 //         for(let product of products) {
@@ -61,12 +60,11 @@ const addToCartBtn = document.getElementsByClassName(".button-2");
 //                             <div class="container">
 //                                 <h3 class="title>${product.title}</h3>
 //                                 <h5 class="price">Price: $${product.price}</h5>
-//                                 <h5>Brand: ${product.brand}</h5>
+//                                 <h5 class="brand">Brand: ${product.brand}</h5>
 //                             </div>
 //                         </div>
 //                         <div class="card-button">
-//                             <button class="button-card button-1">Buy</button>
-//                             <button id="button-2" type="submit" class="button-card button-2">Add to cart</button>
+//                             <button class="button-card">Details</button>
 //                         </div>
 //                     </div>
 //                 `;
@@ -83,6 +81,7 @@ const addToCartBtn = document.getElementsByClassName(".button-2");
 //             loadMoreButton.style.display = "none";
 //         };
 //         fadeIn(div);
+        
 //     });
 // };
 
@@ -101,13 +100,13 @@ const addToCartBtn = document.getElementsByClassName(".button-2");
 
 
 // function addToCart(element) {
-//     // var productParent = document.getElementsByClassName('product');
-//     // var price = document.getElementsByClassName(".price");
-//     // var productName = document.getElementsByClassName(".title");
+//     var productParent = document.getElementsByClassName('product');
+//     var price = document.getElementsByClassName(".price");
+//     var productName = document.getElementsByClassName(".title");
     
-//     var productParent = $(element).closest("div.product");
-//     var price = $(productParent).find(".price").text();
-//     var productName = $(productParent).find(".title").text();
+//     // var productParent = $(element).closest("div.product");
+//     // var price = $(productParent).find(".price").text();
+//     // var productName = $(productParent).find(".title").text();
 
 //     var cartItem = {
 //         productName: productName,
@@ -175,9 +174,8 @@ const addToCartBtn = document.getElementsByClassName(".button-2");
 
 import { products } from "./products.js";
 
-let productsContainer = document.getElementById("#products-container");
+let cardsContainer = document.getElementById("products-container");
 let cardProducts = document.createElement("div");
-cardProducts.classList.add("card-products");
 
 
 for (let i = 0; i < products.length; i++) {
@@ -200,6 +198,7 @@ for (let i = 0; i < products.length; i++) {
     image.classList.add("card-image");
     image.setAttribute("src", products[i].thumbnail);
     container.classList.add("container");
+    cardProducts.classList.add("card-products");
 
     title.classList.add("title");
     price.classList.add("price");
@@ -224,7 +223,13 @@ for (let i = 0; i < products.length; i++) {
 
     cardProducts.appendChild(product);
     cardsContainer.prepend(cardProducts);
+};
 
-    console.log(products[i].thumbnail);
+const addToCartButton = document.getElementsByClassName("button-card");
 
+for(let i = 0; i < addToCartButton.length; i++) {
+    addToCartButton[i].addEventListener("click", function() {
+        sessionStorage.setItem("product", JSON.stringify(products[i]));
+        window.location='details.html';
+    })
 }

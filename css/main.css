@@ -6,7 +6,7 @@
 
 header {
     width: 100%;
-    height: 700px;
+    height: 100px;
     margin: 0;
     background-color: #DF826C;
 }
@@ -96,8 +96,12 @@ nav {
 
 
 /*  CARDS */
+.cards-container {
+    background-color: #DF826C;
+}
 .cards {
-    margin-top: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 30px;
