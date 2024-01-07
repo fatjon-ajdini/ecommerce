@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 header {
     width: 100%;
     height: 100px;
@@ -95,6 +94,33 @@ nav {
     line-height: normal;
 }
 
-.product-details {
+/* Product Details */
+
+#product-details {
+    height: 650px;
     background-color: #DF826C;
+}
+
+
+.product-container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 600px 1fr;
+    column-gap: 20px;
+}
+
+.image-container img{
+    border-radius: 50px;
+    border: 3px solid #8ADAB2;
+    height: 400px;
+    width: 100%;
+}
+
+.product-desc {
+    height: 400px;
+    padding: 20px;
+    border-radius: 50px;
+    border: 3px solid #8ADAB2;
 }
