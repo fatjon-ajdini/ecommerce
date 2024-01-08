@@ -124,3 +124,25 @@ nav {
     border-radius: 50px;
     border: 3px solid #8ADAB2;
 }
+
+.buttons {
+    width: 320px;
+    margin: 40px auto;
+}
+
+.button1, .button2 {
+    width: 150px;
+    height: 44px;
+    border: 3px #8ADAB2 solid;
+    border-radius: 20px;
+    padding: 0 12px;
+    background-color: #F8FFD2;
+}
+
+.button2 {
+    margin-left: 15px;
+}
+
+.button1:hover, .button2:hover {
+    background-color: #8ADAB2;
+}

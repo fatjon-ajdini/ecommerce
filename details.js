@@ -2,8 +2,6 @@ console.log(JSON.parse(sessionStorage.getItem("product")));
 
 let detailedProduct = JSON.parse(sessionStorage.getItem("product"));
 
-console.log(detailedProduct.price);
-
 let primaryProduct = document.getElementById("product-details")
 
 let productContainer = document.createElement("div");
@@ -55,5 +53,5 @@ productImageContainer.appendChild(productImage);
 productContainer.appendChild(productImageContainer);
 productContainer.appendChild(productDescription);
 
-primaryProduct.appendChild(productContainer);
+primaryProduct.prepend(productContainer);
 
