@@ -55,3 +55,11 @@ productContainer.appendChild(productDescription);
 
 primaryProduct.prepend(productContainer);
 
+
+
+let addProductToCart = document.getElementsByClassName("button2");
+
+addProductToCart[0].addEventListener("click", function() {
+    let addProduct = sessionStorage.getItem("product");
+    sessionStorage.setItem("cart", addProduct);
+});

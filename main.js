@@ -1,4 +1,64 @@
+import { products } from "./products.js";
 
+let cardsContainer = document.getElementById("products-container");
+let cardProducts = document.createElement("div");
+
+
+for (let i = 0; i < products.length; i++) {
+    let product = document.createElement("div");
+
+    let innerDiv = document.createElement("div");
+    let image = document.createElement("img");
+    let container = document.createElement("div");
+    let title = document.createElement("h3");
+    let price = document.createElement("h5");
+    let brand = document.createElement("h5");
+
+    let cardButton = document.createElement("div");
+    let details = document.createElement("button");
+
+
+    product.classList.add("product");
+
+    innerDiv.classList.add("inner-card");
+    image.classList.add("card-image");
+    image.setAttribute("src", products[i].thumbnail);
+    container.classList.add("container");
+    cardProducts.classList.add("card-products");
+
+    title.classList.add("title");
+    price.classList.add("price");
+    brand.classList.add("brand");
+
+    cardButton.classList.add("card-button");
+    details.classList.add("button-1", "button-card");
+
+    
+    container.appendChild(title);
+    container.appendChild(price);
+    container.appendChild(brand);
+    innerDiv.prepend(image, container);
+    cardButton.appendChild(details);
+    product.prepend(innerDiv, cardButton);
+
+    
+    title.innerHTML = products[i].title;
+    price.innerHTML = `$ ${products[i].price}`;
+    brand.innerHTML = products[i].brand;
+    details.innerHTML = 'Details';
+
+    cardProducts.appendChild(product);
+    cardsContainer.prepend(cardProducts);
+};
+
+const addToCartButton = document.getElementsByClassName("button-card");
+
+for(let i = 0; i < addToCartButton.length; i++) {
+    addToCartButton[i].addEventListener("click", function() {
+        sessionStorage.setItem("product", JSON.stringify(products[i]));
+        window.location='details.html';
+    })
+}
 
 // const api = 'https://dummyjson.com/products/';
 // fetch(api)
@@ -172,64 +232,3 @@
 // };
 
 
-import { products } from "./products.js";
-
-let cardsContainer = document.getElementById("products-container");
-let cardProducts = document.createElement("div");
-
-
-for (let i = 0; i < products.length; i++) {
-    let product = document.createElement("div");
-
-    let innerDiv = document.createElement("div");
-    let image = document.createElement("img");
-    let container = document.createElement("div");
-    let title = document.createElement("h3");
-    let price = document.createElement("h5");
-    let brand = document.createElement("h5");
-
-    let cardButton = document.createElement("div");
-    let details = document.createElement("button");
-
-
-    product.classList.add("product");
-
-    innerDiv.classList.add("inner-card");
-    image.classList.add("card-image");
-    image.setAttribute("src", products[i].thumbnail);
-    container.classList.add("container");
-    cardProducts.classList.add("card-products");
-
-    title.classList.add("title");
-    price.classList.add("price");
-    brand.classList.add("brand");
-
-    cardButton.classList.add("card-button");
-    details.classList.add("button-1", "button-card");
-
-    
-    container.appendChild(title);
-    container.appendChild(price);
-    container.appendChild(brand);
-    innerDiv.prepend(image, container);
-    cardButton.appendChild(details);
-    product.prepend(innerDiv, cardButton);
-
-    
-    title.innerHTML = products[i].title;
-    price.innerHTML = `$ ${products[i].price}`;
-    brand.innerHTML = products[i].brand;
-    details.innerHTML = 'Details';
-
-    cardProducts.appendChild(product);
-    cardsContainer.prepend(cardProducts);
-};
-
-const addToCartButton = document.getElementsByClassName("button-card");
-
-for(let i = 0; i < addToCartButton.length; i++) {
-    addToCartButton[i].addEventListener("click", function() {
-        sessionStorage.setItem("product", JSON.stringify(products[i]));
-        window.location='details.html';
-    })
-}
