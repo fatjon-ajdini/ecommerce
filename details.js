@@ -1,4 +1,3 @@
-console.log(JSON.parse(sessionStorage.getItem("product")));    
 
 let detailedProduct = JSON.parse(sessionStorage.getItem("product"));
 
@@ -60,6 +59,23 @@ primaryProduct.prepend(productContainer);
 let addProductToCart = document.getElementsByClassName("button2");
 
 addProductToCart[0].addEventListener("click", function() {
-    let addProduct = sessionStorage.getItem("product");
-    sessionStorage.setItem("cart", addProduct);
+    let cart = {
+        productId : detailedProduct.id,
+        productName : detailedProduct.title,
+        productPrice : detailedProduct.price,
+        productImage : detailedProduct.thumbnail,
+    };
+
+    // let cartJSON = JSON.stringify(cart);
+
+    let cartArray = new Array();
+
+    // If not empty
+    if (sessionStorage.getItem("cart")) {
+        cartArray = JSON.parse(sessionStorage.getItem("cart"));
+    }
+    cartArray.push(cart);
+    let cartArrayJSON = JSON.stringify(cartArray);
+    sessionStorage.setItem("cart", cartArrayJSON);
+
 });
