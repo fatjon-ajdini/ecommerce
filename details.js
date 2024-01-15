@@ -31,6 +31,7 @@ productDiscount.innerHTML = `Discount: ${detailedProduct.discountPercentage}%`;
 
 let discount = detailedProduct.discountPercentage / 100;
 let pricediscount = discount * detailedProduct.price;
+let finalprice = (detailedProduct.price - pricediscount).toFixed(2);
 productFinalPrice.innerHTML = `Final Price: ${(detailedProduct.price - pricediscount).toFixed(2)}`;
 
 productStock.innerHTML = `Stock: ${detailedProduct.stock}`;
@@ -55,27 +56,34 @@ productContainer.appendChild(productDescription);
 primaryProduct.prepend(productContainer);
 
 
-
-let addProductToCart = document.getElementsByClassName("button2");
-
-addProductToCart[0].addEventListener("click", function() {
+function addToCartProduct() {
     let cart = {
         productId : detailedProduct.id,
         productName : detailedProduct.title,
         productPrice : detailedProduct.price,
         productImage : detailedProduct.thumbnail,
     };
-
-    // let cartJSON = JSON.stringify(cart);
-
+    let cartJSON = JSON.stringify(cart);
+    
     let cartArray = new Array();
+    
 
     // If not empty
     if (sessionStorage.getItem("cart")) {
         cartArray = JSON.parse(sessionStorage.getItem("cart"));
     }
     cartArray.push(cart);
+    
+    
     let cartArrayJSON = JSON.stringify(cartArray);
     sessionStorage.setItem("cart", cartArrayJSON);
+    console.log();
+};
 
+
+
+let addProductToCart = document.getElementsByClassName("button2");
+addProductToCart[0].addEventListener("click", function() {
+    addToCartProduct();
+    alert("Product was added to cart");
 });
