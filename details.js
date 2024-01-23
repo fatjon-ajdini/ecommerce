@@ -87,3 +87,5 @@ addProductToCart[0].addEventListener("click", function() {
     addToCartProduct();
     alert("Product was added to cart");
 });
+
+
